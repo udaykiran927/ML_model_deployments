@@ -18,7 +18,7 @@ def predict():
     print(int_features)
     features=[np.array(int_features)]
     prediction=model.predict(features)[0]
-    return render_template("index.html",house_price="The House would cost around: ₹ {}".format(prediction))
+    return render_template("submit.html",house_price="The House would cost around: ₹ {}".format(prediction))
         
 if __name__=='__main__':
     app.run(debug=True)
