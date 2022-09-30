@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        table, th, td {
+          border: 8px solid skyblue;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+        }
+        @media Print {
+            body * {
+                visibility: visible;
+            }
+            .button * {
+                visibility: hidden;
+            }
+        }
+        button {
+            border: 8px solid #9b59b6;
+            padding:10px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price Value</title>
+    <title>House Cost</title>
 </head>
 <body>
     <div class="container">
@@ -13,7 +34,72 @@
         <div class="content">
             <div class="user-details">
                 <div class="input-box">
-                  <center>{{ house_price }}</center>
+                  <center>
+                    <table border="2">
+                        <tr>
+                            <th padd>REQUIREMENTS</th>
+                            <th>QUANTITY</th>
+                        </tr>
+                        <tr>
+                            <td>TOTAL AREA</td>
+                            <td>{{ are }}</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL BEDRROMS</td>
+                            <td>{{ bedrooms }}</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL DRESSINGROOMS</td>
+                            <td>{{ bathrms }}</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL UPSTAIRS</td>
+                            <td>{{ upstair }}</td>
+                        </tr>
+                        <tr>
+                            <td>Near to MAINROAD</td>
+                            <td>{{ ma_rd }}</td>
+                        </tr>
+                        <tr>
+                            <td>GUESTROOM</td>
+                            <td>{{ gst }}</td>
+                        </tr>
+                        <tr>
+                            <td>BASEMENT</td>
+                            <td>{{ bst }}</td>
+                        </tr>
+                        <tr>
+                            <td>HOT WATER</td>
+                            <td>{{ ht_wt }}</td>
+                        </tr>
+                        <tr>
+                            <td>AIR CONDITION</td>
+                            <td>{{ ar_cn }}</td>
+                        </tr>
+                        <tr>
+                            <td>NO OF PARKINGS</td>
+                            <td>{{ prk }}</td>
+                        </tr>
+                        <tr>
+                            <td>PREFACE</td>
+                            <td>{{ pr_f }}</td>
+                        </tr>
+                        <tr>
+                            <td>TYPE OF FURNISHING</td>
+                            <td>{{ fr_st }}</td>
+                        </tr>
+                        <tr>
+                            <td>PREDICTED COST</td>
+                            <td>{{ house_price }}</td>
+                        </tr>
+
+                    </table>
+                    <br><br>
+                    <div class="button">
+                        <button onclick="window.print()">Print Invoice<br><br>
+                    </div>
+                    
+                    </center>
                 </div>
             </div>
         </div>
