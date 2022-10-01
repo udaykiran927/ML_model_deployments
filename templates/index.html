@@ -6,6 +6,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
+  <video autoplay loop muted plays-inline id="myVideo">
+    <source src="house.mp4" type="video/mp4">
+  </video>
   <div class="container">
     <div class="title">HOUSE PRICE PREDICTION</div>
     <div class="content">
@@ -28,36 +31,65 @@
             <input type="text" name="upst" placeholder="Enter in b/w 1 and 3" required>
           </div>
           <div class="input-box">
-            <span class="details">Do you want MainRoad</span>
-            <input type="text" name="mard" placeholder="Enter either 1 or 0" required>
+            <span class="details">Do you want Near to MainRoad</span>
+            <input list="brow" name="hello" placeholder="yes or No" required>
+            <datalist id="brow">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
             <span class="details">Do You Want Guestroom</span>
-            <input type="text" name="gues" placeholder="Enter either 1 or 0" required>
+            <input list="brows" type="text" name="gues" placeholder="Enter either 1 or 0" required>
+            <datalist id="brows">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
             <span class="details">Do You Want Basement</span>
-            <input type="text" name="base" placeholder="Enter either 1 or 0" required>
+            <input list="browse" type="text" name="base" placeholder="Enter either 1 or 0" required>
+            <datalist id="browse">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
             <span class="details">Do You Want HotWatersystem</span>
-            <input type="text" name="hot" placeholder="Enter either 1 or 0" required>
+            <input list="uk" type="text" name="hot" placeholder="Enter either 1 or 0" required>
+            <datalist id="uk">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
             <span class="details">Do You Want Airconditioning</span>
-            <input type="text" name="air" placeholder="Enter either 1 or 0" required>
+            <input list="br1" type="text" name="air" placeholder="Enter either 1 or 0" required>
+            <datalist id="br1">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
-            <span class="details">Do You Want parking</span>
+            <span class="details">No Of parking Blocks</span>
             <input type="text" name="par" placeholder="Enter in b/w 1 to 4" required>
           </div>
           <div class="input-box">
             <span class="details">Do You Want preface</span>
-            <input type="text" name="pref" placeholder="Enter either 1 or 0" required>
+            <input list="br2" type="text" name="pref" placeholder="Enter either 1 or 0" required>
+            <datalist id="br2">
+              <option value="Yes">
+              <option value="No">
+            </datalist>
           </div>
           <div class="input-box">
-            <span class="details">Do You Want Furnishing</span>
-            <input type="text" name="furn" placeholder="Enter in b/w 0 to 2" required>
+            <span class="details">Type of Furnishing</span>
+            <input list="br3" type="text" name="f" placeholder="Enter in b/w 0 to 2" required>
+            <datalist id="br3">
+              <option value="Furnished">
+              <option value="Semi-Furnished">
+              <option value="No Furnished">
+            </datalist>
           </div>
         </div>
         <div class="button">
@@ -67,6 +99,7 @@
       </form>
     </div>
   </div>
+  
 
 </body>
 </html>
