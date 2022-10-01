@@ -12,52 +12,85 @@ def home():
 @app.route("/predict",methods=["GET","POST"])
 
 def predict():
-    int_features=[int(i) for i in request.form.values()]
-    print(int_features)
+    int_features=[i for i in request.form.values()]
+    if int_features[4]=="Yes":
+        int_features[4]=1
+    else:
+        int_features[4]=0
+    if int_features[5]=="Yes":
+        int_features[5]=1
+    else:
+        int_features[5]=0
+    if int_features[6]=="Yes":
+        int_features[6]=1
+    else:
+        int_features[6]=0
+    if int_features[7]=="Yes":
+        int_features[7]=1
+    else:
+        int_features[7]=0
+    if int_features[8]=="Yes":
+        int_features[8]=1
+    else:
+        int_features[8]=0
+    if int_features[10]=="Yes":
+        int_features[10]=1
+    else:
+        int_features[10]=0
+    if int_features[11]=="Furnished":
+        int_features[11]=2
+    elif int_features[11]=="Semi-Furnished":
+        int_features[11]=1
+    else:
+        int_features[11]=0
+    int_feature=[int(i) for i in int_features]
+
+
+    print(int_feature)
     def ar():
-        return int_features[0]
+        return int_feature[0]
     def bed():
-        return int_features[1]
+        return int_feature[1]
     def dress():
-        return int_features[2]
+        return int_feature[2]
     def upst():
-        return int_features[3]
+        return int_feature[3]
     def mr():
-        if int_features[4]==1:
+        if int_feature[4]==1:
             return "Yes"
         else:
             return "No"
     def gest():
-        if int_features[5]==1:
+        if int_feature[5]==1:
             return "Yes"
         else:
             return "No"
     def bs():
-        if int_features[6]==1:
+        if int_feature[6]==1:
             return "Yes"
         else:
             return "No"
     def ht():
-        if int_features[7]==1:
+        if int_feature[7]==1:
             return "Yes"
         else:
             return "No"
     def air():
-        if int_features[8]==1:
+        if int_feature[8]==1:
             return "Yes"
         else:
             return "No"
     def par():
-        return int_features[9]
+        return int_feature[9]
     def pre():
-        if int_features[10]==1:
+        if int_feature[10]==1:
             return "Yes"
         else:
             return "No"
     def furn():
-        if int_features[11]==2:
+        if int_feature[11]==2:
             return "Furnished"
-        elif int_features[11]==1:
+        elif int_feature[11]==1:
             return "Semi Furnished"
         else:
             return "No Furnishing"
@@ -73,7 +106,7 @@ def predict():
     pr=par()
     pf=pre()
     fur=furn()
-    features=[np.array(int_features)]
+    features=[np.array(int_feature)]
     prediction=model.predict(features)[0]
     return render_template("submit.html",are=area,bedrooms=bd,bathrms=bat,upstair=us,ma_rd=mard,gst=gs,bst=base,ht_wt=hot,ar_cn=airc,prk=pr,pr_f=pf,fr_st=fur,house_price="₹"+str(int(prediction)))
         
